@@ -1,9 +1,13 @@
 FROM node:16
 
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
+WORKDIR /app/src/app
 
-COPY . .
+COPY app/src/package*.json ./
+
+RUN npm ci --omit=dev
+
+COPY app/src/ .
+
 EXPOSE 3000
+
 CMD ["npm", "start"]
