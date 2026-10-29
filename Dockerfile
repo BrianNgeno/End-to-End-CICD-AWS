@@ -1,12 +1,12 @@
 FROM node:16
 
-WORKDIR /app/src/app
+WORKDIR /usr/src/app
 
-COPY app/src/package*.json ./
+COPY src/package*.json ./
 
 RUN npm ci --omit=dev
 
-COPY app/src/ .
+COPY src/ .
 
 EXPOSE 3000
 

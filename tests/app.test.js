@@ -8,6 +8,7 @@ describe("Application tests", () => {
         const response = await request(app).get("/");
 
         expect(response.statusCode).toBe(200);
+
         expect(response.text).toContain(
             "Hello from AWS CI/CD Capstone Project!"
         );
@@ -18,6 +19,7 @@ describe("Application tests", () => {
         const response = await request(app).get("/health");
 
         expect(response.statusCode).toBe(200);
+
         expect(response.body.status).toBe("healthy");
     });
 
